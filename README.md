@@ -19,7 +19,7 @@ allprojects {
 
 ```groovy
 dependencies {
-  implementation 'com.github.sieunju:permissions:core:0.0.2'
+  implementation 'com.github.sieunju:permissions:core:0.0.1'
 }
 ```
 
