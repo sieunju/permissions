@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
-import com.hmju.permission.SPermissions
+import com.hmju.permission.SPermission
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         findViewById<Button>(R.id.button1).setOnClickListener {
-            SPermissions(this)
+            SPermission(this)
                 .addPermission(Manifest.permission.READ_PHONE_STATE)
                 .addPermission(Manifest.permission.CAMERA)
                 .addPermission(Manifest.permission.RECORD_AUDIO)
