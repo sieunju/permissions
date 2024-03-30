@@ -5,7 +5,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import com.hmju.permission.SPermissions
+import com.hmju.permission.SPermission
 
 /**
  * Description : 권한 Activity
@@ -22,7 +22,7 @@ internal class PermissionsActivity : AppCompatActivity() {
     ) { handleCallback() }
 
     private val requestPermissions: Array<String>? by lazy {
-        intent.getStringArrayExtra(SPermissions.extraCode)
+        intent.getStringArrayExtra(SPermission.extraCode)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +37,7 @@ internal class PermissionsActivity : AppCompatActivity() {
     private fun handleCallback() {
         finish()
         Handler(Looper.getMainLooper()).post {
-            SPermissions.listener?.callback()
+            SPermission.listener?.callback()
         }
     }
 

@@ -40,7 +40,7 @@ dependencies {
 afterEvaluate {
     publishing {
         publications {
-            create<MavenPublication>("deploy") {
+            create<MavenPublication>("release") {
                 from(components["release"])
                 groupId = "com.github.sieunju"
                 artifactId = "permissions"

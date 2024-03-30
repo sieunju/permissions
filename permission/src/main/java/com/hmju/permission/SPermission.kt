@@ -14,7 +14,7 @@ import com.hmju.permission.internal.PermissionsListener
  *
  * Created by juhongmin on 3/30/24
  */
-class SPermissions {
+class SPermission {
 
     private val context: Context
 
@@ -37,7 +37,7 @@ class SPermissions {
 
     private val requestPermissions: MutableSet<String> = mutableSetOf()
 
-    fun addPermission(permission: String): SPermissions {
+    fun addPermission(permission: String): SPermission {
         requestPermissions.add(permission)
         return this
     }
@@ -46,7 +46,7 @@ class SPermissions {
      * Request Permissions
      * @param permissions Manifest.CAMERA, Manifest.STORAGE ...
      */
-    fun addPermissions(permissions: List<String>): SPermissions {
+    fun addPermissions(permissions: List<String>): SPermission {
         requestPermissions.addAll(permissions)
         return this
     }
