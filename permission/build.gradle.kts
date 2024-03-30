@@ -43,7 +43,8 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 from(components["release"])
                 groupId = "com.github.sieunju.permissions"
-                version = "0.0.1"
+                artifactId = "core"
+                version = "0.0.2"
             }
         }
     }
