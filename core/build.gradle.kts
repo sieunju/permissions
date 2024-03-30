@@ -41,8 +41,8 @@ afterEvaluate {
     publishing {
         publications {
             create<MavenPublication>("deploy") {
-                groupId = "com.github.sieunju"
-                artifactId = "permissions"
+                groupId = "com.github.sieunju.permissions"
+                artifactId = "core"
                 version = "0.0.2-beta01"
             }
         }
