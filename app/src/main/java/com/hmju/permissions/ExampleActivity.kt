@@ -1,0 +1,15 @@
+package com.hmju.permissions
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+
+internal class ExampleActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_example)
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.fragment, ExampleFragment())
+            commit()
+        }
+    }
+}
