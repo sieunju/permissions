@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("maven-publish")
 }
 
 android {
@@ -33,6 +34,17 @@ android {
 }
 
 dependencies {
-
     implementation("androidx.appcompat:appcompat:1.4.1")
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("maven") {
+                groupId = "com.github.sieunju"
+                artifactId = "permissions"
+                version = "0.0.1"
+            }
+        }
+    }
 }
