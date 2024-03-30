@@ -1,4 +1,4 @@
-package com.hmju.permissions
+package com.hmju.example
 
 import android.Manifest
 import android.content.Intent

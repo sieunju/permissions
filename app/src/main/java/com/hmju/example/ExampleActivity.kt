@@ -1,4 +1,4 @@
-package com.hmju.permissions
+package com.hmju.example
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
