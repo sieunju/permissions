@@ -19,7 +19,7 @@ allprojects {
 
 ```groovy
 dependencies {
-  implementation 'com.github.sieunju:permissions:core:0.0.1'
+  implementation 'com.github.sieunju:permissions:0.0.2'
 }
 ```
 
@@ -27,7 +27,7 @@ dependencies {
 - 혹시나 머티리얼을 사용하시거나 프로젝트에 사용중인 라이브러리랑 충돌이 일어나는 경우에는 아래와 같이 사용해주시면 됩니다. 🙇‍♂️
 - A.K.A exclude
 ```groovy
-implementation("com.github.sieunju.permissions:core:$lateversion") {
+implementation("com.github.sieunju:permissions:0.0.2") {
         exclude("androidx.appcompat:appcompat")
 }
 ```
