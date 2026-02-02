@@ -3,8 +3,6 @@ package com.hmju.permission
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.hmju.permission.internal.PermissionsActivity
 import com.hmju.permission.internal.PermissionsListener
@@ -14,6 +12,7 @@ import com.hmju.permission.internal.PermissionsListener
  *
  * Created by juhongmin on 3/30/24
  */
+@Suppress("unused")
 class SPermission {
 
     private val context: Context
@@ -69,12 +68,7 @@ class SPermission {
     fun build(callback: (Boolean, Map<String, Boolean>) -> Unit) {
         if (requestPermissions.isEmpty()) throw NullPointerException("권한은 필수 값입니다.")
         // 권한 거부인것들만 권한 팝업 처리하도록
-        val negativePermissions = requestPermissions.filter {
-            ContextCompat.checkSelfPermission(
-                context,
-                it
-            ) == PackageManager.PERMISSION_DENIED
-        }
+        val negativePermissions = context.isDeniedPermissions(requestPermissions.toList())
         if (negativePermissions.isEmpty()) {
             callback(true, mapOf())
         } else {
@@ -87,14 +81,11 @@ class SPermission {
                 override fun callback() {
                     val resultPermissions = hashMapOf<String, Boolean>()
                     var isAllGrated = true
-                    requestPermissions.forEach { permission ->
-                        val permissionGranted = ContextCompat.checkSelfPermission(
-                            context,
-                            permission
-                        ) == PackageManager.PERMISSION_GRANTED
-                        resultPermissions[permission] = permissionGranted
+                    requestPermissions.forEach {
+                        val isGranted = context.isGranted(it)
+                        resultPermissions[it] = isGranted
                         // 하나라도 거부된 경우
-                        if (!permissionGranted) {
+                        if (!isGranted) {
                             isAllGrated = false
                         }
                     }
