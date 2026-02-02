@@ -44,7 +44,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.sieunju.permissions"
                 artifactId = "core"
-                version = "0.0.2"
+                version = "0.0.3"
             }
         }
     }
